@@ -1,8 +1,6 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-#include <string>
-
 class Matrix {
    public:
     int width, height;
