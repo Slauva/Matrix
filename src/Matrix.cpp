@@ -68,10 +68,8 @@ Matrix& Matrix::operator=(Matrix& other) {
 void Matrix::transpose() {
     Matrix res(height, width);
     for (int i = 0; i < height; i++)
-        for (int j = 0; j < width; j++) {
+        for (int j = 0; j < width; j++)
             *(res.matrix + i + j * height) = *(matrix + j + i * width);
-            std::cout << *(res.matrix + i + j * width) << " ";
-        }
     width = res.width;
     height = res.height;
     matrix = res.matrix;
@@ -83,7 +81,7 @@ void Matrix::shape() {
 
 // Overloading function cin for matrix
 std::istream& operator>>(std::istream& is, Matrix& other) {
-    std::cout << "Enter a " << other.width << " by " << other.height << " Matrix:" << std::endl;
+    std::cout << "Enter a " << other.height << " by " << other.width << " Matrix:" << std::endl;
     for (int j = 0; j < other.height; j++)
         for (int i = 0; i < other.width; i++)
             std::cin >> *(other.matrix + i + j * other.width);
@@ -91,7 +89,7 @@ std::istream& operator>>(std::istream& is, Matrix& other) {
 
 // Overloading function cout for matrix
 std::ostream& operator<<(std::ostream& os, Matrix& other) {
-    std::cout << "Output a " << other.width << " by " << other.height << " Matrix:" << std::endl;
+    std::cout << "Output a " << other.height << " by " << other.width << " Matrix:" << std::endl;
     for (int j = 0; j < other.height; ++j) {
         for (int i = 0; i < other.width; ++i)
             std::cout << *(other.matrix + i + j * other.width) << " ";
