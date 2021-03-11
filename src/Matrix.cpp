@@ -94,7 +94,7 @@ std::ostream& operator<<(std::ostream& os, Matrix& other) {
     std::cout << "Output a " << other.width << " by " << other.height << " Matrix:" << std::endl;
     for (int j = 0; j < other.height; ++j) {
         for (int i = 0; i < other.width; ++i)
-            std::cout << *(other.matrix + i + j * other.height) << " ";
+            std::cout << *(other.matrix + i + j * other.width) << " ";
         std::cout << std::endl;
     }
 }
